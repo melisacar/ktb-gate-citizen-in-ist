@@ -1,6 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import pandas as pd
+from io import BytesIO
+import urllib.parse
+import os
+from urllib.parse import urlparse, unquote
 
 def fetch_page(url):
     r = requests.get(url)
@@ -37,6 +42,19 @@ def extract_excel_links(html):
             excel_links.append(full_url)
     return excel_links
 
+def download_excel_file(href):
+    """
+    Downloads the Excel file from the given href.
+    Returns the content of the file if successful, else None.
+    """
+    encoded_href = urllib.parse.quote(href, safe=':/?&=')
+    response = requests.get(encoded_href, verify=False)
+    if response.status_code == 200:
+        return response.content
+    else:
+        print(f"Failed to retrieve {href}, status code: {response.status_code}")
+        return None
+
 
 ### main execution
 base_url = "https://yigm.ktb.gov.tr/"
@@ -47,3 +65,26 @@ html_content = fetch_page(url)
 
 excel_links = extract_excel_links(html_content)
 print(excel_links)
+
+for href in excel_links:
+    excel_content = download_excel_file(href)
+    
+    if excel_content:
+        # Query string'i temizle ve dosya adını al
+        path = urlparse(href).path
+        filename = unquote(os.path.basename(path))
+        extension = os.path.splitext(filename)[1].lower()
+
+        if extension == ".xls":
+            engine = "xlrd"
+        elif extension == ".xlsx":
+            engine = "openpyxl"
+        else:
+            print(f"Unsupported extension: {extension} in URL: {href}")
+            continue
+
+        try:
+            df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", engine=engine)
+            print(df.head())
+        except Exception as e:
+            print(f"Error reading Excel file {href}: {e}")
