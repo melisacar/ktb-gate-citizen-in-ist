@@ -8,6 +8,9 @@ import os
 from urllib.parse import urlparse, unquote
 
 def fetch_page(url):
+    headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+    }
     r = requests.get(url)
     if r.status_code == 200:
         return r.content
@@ -70,7 +73,6 @@ for href in excel_links:
     excel_content = download_excel_file(href)
     
     if excel_content:
-        # Query string'i temizle ve dosya adını al
         path = urlparse(href).path
         filename = unquote(os.path.basename(path))
         extension = os.path.splitext(filename)[1].lower()
