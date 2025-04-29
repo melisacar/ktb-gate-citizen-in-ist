@@ -86,7 +86,32 @@ for href in excel_links:
             continue
 
         try:
-            df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", engine=engine)
-            print(df.head())
+            # Load the Excel file and print sheet names
+            with BytesIO(excel_content) as f:
+                xl = pd.ExcelFile(f, engine=engine)
+                print("Sheet names:", xl.sheet_names)  # Show available sheet names
+            
+            # Attempt to load the specific sheet 'Giren Vat.' 
+            df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
+            print(f"{filename}: in 'Giren Vat.' sheet {df.shape[0]} row, has {df.shape[1]} column")
+            #print("First 5 rows:")
+            #print(df.head())
+
+            #print("Data in the first column:")
+            #print(df.iloc[:, 0].dropna().astype(str).unique())
+            
+            # Forward fill to handle merged cells in excel.
+            df.iloc[:, 0] = df.iloc[:, 0].ffill()
+            df_ffilled = df.iloc[:, 0] == "İstanbul"
+            df_istanbul = df[df_ffilled.copy()]
+            df_istanbul.fillna(0, inplace=True)
+            selected_columns = [0, 1] + list(range(3, df_istanbul.shape[1]))
+            print(df_istanbul.iloc[:, selected_columns])
+            #print("Indexes at the first column")
+            #print(df[look].index.tolist())
+            #print("Rows containing İstanbul:")
+            
+            # Print rows containing İstanbul data.
+            #print(df[df_ffilled])
         except Exception as e:
             print(f"Error reading Excel file {href}: {e}")
