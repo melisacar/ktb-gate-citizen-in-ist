@@ -1,0 +1,8 @@
+requests
+bs4
+urllib.parse
+pandas
+io
+os
+re
+unicodedata
