@@ -142,7 +142,7 @@ for href in excel_links:
                     df_melted["Date"] = df_melted.apply(create_date, axis=1)
                     df_melted = df_melted[["City", "Border Gate", "Date", "Visitor Count"]]
 
-                    print(df_melted.head(10))
+                    print(df_melted)
                 else:
                     print(f"Unrecognized month in filename: '{raw_month}'")
             else:
