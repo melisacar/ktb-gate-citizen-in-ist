@@ -66,7 +66,7 @@ url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
 html_content = fetch_page(url)
 
 excel_links = extract_excel_links(html_content)
-print(f"Excel links: {excel_links}")
+#print(f"Excel links: {excel_links}")
 
 # Turkish month names
 months_tr = [
@@ -109,10 +109,10 @@ for href in excel_links:
         try:
             with BytesIO(excel_content) as f:
                 xl = pd.ExcelFile(f, engine=engine)
-                print("Sheet names:", xl.sheet_names)
+                #print("Sheet names:", xl.sheet_names)
 
             df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
-            print(f"Filename: {filename}")
+            #print(f"Filename: {filename}")
             df.iloc[:, 0] = df.iloc[:, 0].ffill()
             df_city = df[df.iloc[:, 0] == "İstanbul"].copy()
             df_city.fillna(0, inplace=True)
@@ -142,7 +142,7 @@ for href in excel_links:
                     df_melted["Date"] = df_melted.apply(create_date, axis=1)
                     df_melted = df_melted[["City", "Border Gate", "Date", "Visitor Count"]]
 
-                    print(df_melted)
+                    print(df_melted.tail(20))
                 else:
                     print(f"Unrecognized month in filename: '{raw_month}'")
             else:
@@ -150,3 +150,4 @@ for href in excel_links:
 
         except Exception as e:
             print(f"Error reading Excel file {href}: {e}")
+
