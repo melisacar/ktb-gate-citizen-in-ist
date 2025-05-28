@@ -33,7 +33,7 @@ def get_year_urls(html):
 def extract_excel_links(html):
     year_urls = get_year_urls(html)
     sorted_year_urls = sorted(year_urls, key=lambda x: int(x.split("/")[-1].split(".")[0]), reverse=True)
-    print(sorted_year_urls)
+    #print(sorted_year_urls)
     latest_year_url = sorted_year_urls[0]
     latest_year_content = fetch_page(latest_year_url)
     soup = BeautifulSoup(latest_year_content, "html.parser")
@@ -90,64 +90,66 @@ month_mapping = {
     "aralık": "aralik", "aralik": "aralik"
 }
 
-for href in excel_links:
-    excel_content = download_excel_file(href)
+def prepare_all_month_df():
+    for href in excel_links:
+        excel_content = download_excel_file(href)
 
-    if excel_content:
-        path = urlparse(href).path
-        filename = unquote(os.path.basename(path))
-        extension = os.path.splitext(filename)[1].lower()
+        if excel_content:
+            path = urlparse(href).path
+            filename = unquote(os.path.basename(path))
+            extension = os.path.splitext(filename)[1].lower()
 
-        if extension == ".xls":
-            engine = "xlrd"
-        elif extension == ".xlsx":
-            engine = "openpyxl"
-        else:
-            print(f"Unsupported extension: {extension} in URL: {href}")
-            continue
-
-        try:
-            with BytesIO(excel_content) as f:
-                xl = pd.ExcelFile(f, engine=engine)
-                #print("Sheet names:", xl.sheet_names)
-
-            df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
-            #print(f"Filename: {filename}")
-            df.iloc[:, 0] = df.iloc[:, 0].ffill()
-            df_city = df[df.iloc[:, 0] == "İstanbul"].copy()
-            df_city.fillna(0, inplace=True)
-
-            filename_normalized = normalize_text(filename)
-            match = re.search(r"\b(" + "|".join(month_mapping) + r")[\W_]*?(\d{4})\b", filename_normalized)
-
-            if match:
-                raw_month, year_str = match.groups()
-                normalized_month = month_mapping.get(raw_month)
-
-                if normalized_month:
-                    month_index = months_tr.index(normalized_month)
-                    selected_months = months_tr[:month_index + 1]
-                    selected_columns = [0, 1] + list(range(3, 3 + len(selected_months)))
-                    df_city = df_city.iloc[:, selected_columns]
-                    df_city.columns = ["City", "Border Gate"] + selected_months
-
-                    df_melted = df_city.melt(
-                        id_vars=["City", "Border Gate"], var_name="Month", value_name="Visitor Count"
-                    )
-
-                    def create_date(row):
-                        month_num = months_tr.index(row["Month"]) + 1
-                        return f"01-{month_num:02d}-{year_str}"
-
-                    df_melted["Date"] = df_melted.apply(create_date, axis=1)
-                    df_melted = df_melted[["City", "Border Gate", "Date", "Visitor Count"]]
-
-                    print(df_melted.tail(20))
-                else:
-                    print(f"Unrecognized month in filename: '{raw_month}'")
+            if extension == ".xls":
+                engine = "xlrd"
+            elif extension == ".xlsx":
+                engine = "openpyxl"
             else:
-                print("Could not extract month and year info from filename.")
+                print(f"Unsupported extension: {extension} in URL: {href}")
+                continue
 
-        except Exception as e:
-            print(f"Error reading Excel file {href}: {e}")
+            try:
+                with BytesIO(excel_content) as f:
+                    xl = pd.ExcelFile(f, engine=engine)
+                    #print("Sheet names:", xl.sheet_names)
 
+                df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
+                #print(f"Filename: {filename}")
+                df.iloc[:, 0] = df.iloc[:, 0].ffill()
+                df_city = df[df.iloc[:, 0] == "İstanbul"].copy()
+                df_city.fillna(0, inplace=True)
+
+                filename_normalized = normalize_text(filename)
+                match = re.search(r"\b(" + "|".join(month_mapping) + r")[\W_]*?(\d{4})\b", filename_normalized)
+
+                if match:
+                    raw_month, year_str = match.groups()
+                    normalized_month = month_mapping.get(raw_month)
+
+                    if normalized_month:
+                        month_index = months_tr.index(normalized_month)
+                        selected_months = months_tr[:month_index + 1]
+                        selected_columns = [0, 1] + list(range(3, 3 + len(selected_months)))
+                        df_city = df_city.iloc[:, selected_columns]
+                        df_city.columns = ["City", "Border Gate"] + selected_months
+
+                        df_melted = df_city.melt(
+                            id_vars=["City", "Border Gate"], var_name="Month", value_name="Visitor Count"
+                        )
+
+                        def create_date(row):
+                            month_num = months_tr.index(row["Month"]) + 1
+                            return f"01-{month_num:02d}-{year_str}"
+
+                        df_melted["Date"] = df_melted.apply(create_date, axis=1)
+                        df_melted = df_melted[["City", "Border Gate", "Date", "Visitor Count"]]
+
+                        print(df_melted.head(20))
+                    else:
+                        print(f"Unrecognized month in filename: '{raw_month}'")
+                else:
+                    print("Could not extract month and year info from filename.")
+
+            except Exception as e:
+                print(f"Error reading Excel file {href}: {e}")
+
+#prepare_all_month_df()
