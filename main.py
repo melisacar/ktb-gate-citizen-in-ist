@@ -130,18 +130,18 @@ def prepare_all_month_df():
                         selected_months = months_tr[:month_index + 1]
                         selected_columns = [0, 1] + list(range(3, 3 + len(selected_months)))
                         df_city = df_city.iloc[:, selected_columns]
-                        df_city.columns = ["City", "Border Gate"] + selected_months
+                        df_city.columns = ["Sehir", "Sinir Kapisi"] + selected_months
 
                         df_melted = df_city.melt(
-                            id_vars=["City", "Border Gate"], var_name="Month", value_name="Visitor Count"
+                            id_vars=["Sehir", "Sinir Kapisi"], var_name="Ay", value_name="Ziyaretci Sayisi"
                         )
 
                         def create_date(row):
-                            month_num = months_tr.index(row["Month"]) + 1
+                            month_num = months_tr.index(row["Ay"]) + 1
                             return f"01-{month_num:02d}-{year_str}"
 
-                        df_melted["Date"] = df_melted.apply(create_date, axis=1)
-                        df_melted = df_melted[["City", "Border Gate", "Date", "Visitor Count"]]
+                        df_melted["Tarih"] = df_melted.apply(create_date, axis=1)
+                        df_melted = df_melted[["Sehir", "Sinir Kapisi", "Tarih", "Ziyaretci Sayisi"]]
 
                         print(df_melted.head(20))
                     else:
@@ -152,4 +152,4 @@ def prepare_all_month_df():
             except Exception as e:
                 print(f"Error reading Excel file {href}: {e}")
 
-#prepare_all_month_df()
+prepare_all_month_df()
