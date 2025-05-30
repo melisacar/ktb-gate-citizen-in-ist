@@ -33,17 +33,22 @@ def get_year_urls(html):
 def extract_excel_links(html):
     year_urls = get_year_urls(html)
     sorted_year_urls = sorted(year_urls, key=lambda x: int(x.split("/")[-1].split(".")[0]), reverse=True)
-    #print(sorted_year_urls)
-    latest_year_url = sorted_year_urls[0]
-    latest_year_content = fetch_page(latest_year_url)
-    soup = BeautifulSoup(latest_year_content, "html.parser")
-    
+    print(sorted_year_urls)
+    #latest_year_url = sorted_year_urls[0]
+    #latest_year_content = fetch_page(latest_year_url)
     excel_links = []
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if ".xls" in href or ".xlsx" in href:
-            full_url = urljoin(base_url, href)
-            excel_links.append(full_url)
+    
+    for year_url in sorted_year_urls:
+        year_page_content = fetch_page(year_url)
+        if not year_page_content:
+            continue
+    
+        soup = BeautifulSoup(year_page_content, "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if ".xls" in href or ".xlsx" in href:
+                full_url = urljoin(base_url, href)
+                excel_links.append(full_url)
     return excel_links
 
 def download_excel_file(href):
