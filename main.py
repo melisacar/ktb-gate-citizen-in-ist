@@ -34,8 +34,6 @@ def extract_excel_links(html):
     year_urls = get_year_urls(html)
     sorted_year_urls = sorted(year_urls, key=lambda x: int(x.split("/")[-1].split(".")[0]), reverse=True)
     print(sorted_year_urls)
-    #latest_year_url = sorted_year_urls[0]
-    #latest_year_content = fetch_page(latest_year_url)
     excel_links = []
     
     for year_url in sorted_year_urls:
