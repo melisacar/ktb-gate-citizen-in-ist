@@ -155,4 +155,4 @@ def prepare_all_month_df():
             except Exception as e:
                 print(f"Error reading Excel file {href}: {e}")
 
-prepare_all_month_df()
+#prepare_all_month_df()
