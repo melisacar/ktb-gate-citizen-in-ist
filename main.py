@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import pandas as pd
 from io import BytesIO
-import urllib.parse
 import os
 from urllib.parse import urlparse, unquote
 import re
@@ -133,18 +132,18 @@ def prepare_all_month_df():
                         selected_months = months_tr[:month_index + 1]
                         selected_columns = [0, 1] + list(range(3, 3 + len(selected_months)))
                         df_city = df_city.iloc[:, selected_columns]
-                        df_city.columns = ["Sehir", "Sinir Kapisi"] + selected_months
+                        df_city.columns = ["sehir", "sinir_kapilari"] + selected_months
 
                         df_melted = df_city.melt(
-                            id_vars=["Sehir", "Sinir Kapisi"], var_name="Ay", value_name="Ziyaretci Sayisi"
+                            id_vars=["sehir", "sinir_kapilari"], var_name="ay", value_name="vatandas_sayisi"
                         )
 
                         def create_date(row):
-                            month_num = months_tr.index(row["Ay"]) + 1
+                            month_num = months_tr.index(row["ay"]) + 1
                             return f"01-{month_num:02d}-{year_str}"
 
-                        df_melted["Tarih"] = df_melted.apply(create_date, axis=1)
-                        df_melted = df_melted[["Sehir", "Sinir Kapisi", "Tarih", "Ziyaretci Sayisi"]]
+                        df_melted["tarih"] = df_melted.apply(create_date, axis=1)
+                        df_melted = df_melted[["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"]]
 
                         print(df_melted.head(20))
                     else:
@@ -152,7 +151,11 @@ def prepare_all_month_df():
                 else:
                     print("Could not extract month and year info from filename.")
 
+            except ValueError as ve:
+                print(f"Sheet 'Giren Vat.' not found in {filename}: {ve}")
+                continue
             except Exception as e:
                 print(f"Error reading Excel file {href}: {e}")
+                continue
 
-#prepare_all_month_df()
+prepare_all_month_df()
