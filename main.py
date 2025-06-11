@@ -7,6 +7,7 @@ import os
 from urllib.parse import urlparse, unquote
 import re
 import unicodedata
+import urllib.parse
 
 def fetch_page(url):
     headers = {
@@ -45,7 +46,9 @@ def extract_excel_links(html):
             href = a["href"]
             if ".xls" in href or ".xlsx" in href:
                 full_url = urljoin(base_url, href)
+                print(f"Found excel is: {full_url}")
                 excel_links.append(full_url)
+    print(f"\nTotally {len(excel_links)} have been found.\n")
     return excel_links
 
 def download_excel_file(href):
@@ -92,70 +95,118 @@ month_mapping = {
     "aralık": "aralik", "aralik": "aralik"
 }
 
+def get_excel_engine(filename):
+    ext = os.path.splitext(filename)[1].lower()
+    if ext == ".xls":
+        return "xlrd"
+    elif ext == ".xlsx":
+        return "openpyxl"
+    return None
+
+def load_excel_file(excel_content, engine):
+    try:
+        with BytesIO(excel_content) as f:
+            xl = pd.ExcelFile(f, engine=engine)
+        return pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
+    except Exception as e:
+        print(f"Error loading Excel content: {e}")
+        return None
+
+def extract_month_year_from_filename(filename):
+    filename_norm = normalize_text(filename)
+    match = re.search(r"\b(" + "|".join(month_mapping) + r")[\W_]*?(\d{4})\b", filename_norm)
+    if match:
+        raw_month, year = match.groups()
+        return month_mapping.get(raw_month), year
+    return None, None
+
+def clean_istanbul_data(df):
+    df.iloc[:, 0] = df.iloc[:, 0].ffill()
+    df_city = df[df.iloc[:, 0] == "İstanbul"].copy()
+    df_city.fillna(0, inplace=True)
+    return df_city
+
+def reshape_city_data(df_city, month_index, year_str):
+    selected_months = months_tr[:month_index + 1]
+    selected_columns = [0, 1] + list(range(3, 3 + len(selected_months)))
+    df_city = df_city.iloc[:, selected_columns]
+    df_city.columns = ["sehir", "sinir_kapilari"] + selected_months
+
+    df_melted = df_city.melt(
+        id_vars=["sehir", "sinir_kapilari"],
+        var_name="ay",
+        value_name="vatandas_sayisi"
+    )
+
+    def create_date(row):
+        month_num = months_tr.index(row["ay"]) + 1
+        return f"01-{month_num:02d}-{year_str}"
+
+    df_melted["tarih"] = df_melted.apply(create_date, axis=1)
+    return df_melted[["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"]]
+
+def process_single_excel(href):
+    print(f"\n--- Processing excel: {href}")
+    content = download_excel_file(href)
+    if not content:
+        return None
+
+    path = urlparse(href).path
+    filename = unquote(os.path.basename(path))
+    print(f"--- File name: {filename}")
+    engine = get_excel_engine(filename)
+
+    if not engine:
+        print(f"Unsupported file extension for {filename}")
+        return None
+
+    df = load_excel_file(content, engine)
+    if df is None:
+        return None
+
+    df_city = clean_istanbul_data(df)
+    month_str, year_str = extract_month_year_from_filename(filename)
+
+    if not month_str or not year_str:
+        print(f"Could not extract month/year from: {filename}")
+        return None
+
+    try:
+        month_index = months_tr.index(month_str)
+        return reshape_city_data(df_city, month_index, year_str)
+    except ValueError:
+        print(f"Unrecognized month: {month_str}")
+        return None
+
 def prepare_all_month_df():
     for href in excel_links:
-        excel_content = download_excel_file(href)
+        df_result = process_single_excel(href)
+        if df_result is not None:
+            print(df_result.head(5))
+            print(df_result.tail(5))
 
-        if excel_content:
-            path = urlparse(href).path
-            filename = unquote(os.path.basename(path))
-            extension = os.path.splitext(filename)[1].lower()
+def combine_all_data(excel_links):
+    all_data = []
 
-            if extension == ".xls":
-                engine = "xlrd"
-            elif extension == ".xlsx":
-                engine = "openpyxl"
-            else:
-                print(f"Unsupported extension: {extension} in URL: {href}")
-                continue
+    for href in excel_links:
+        df = process_single_excel(href)
+        if df is not None:
+            all_data.append(df)
 
-            try:
-                with BytesIO(excel_content) as f:
-                    xl = pd.ExcelFile(f, engine=engine)
-                    #print("Sheet names:", xl.sheet_names)
+    if all_data:
+        combined_df = pd.concat(all_data, ignore_index=True)
+        return combined_df
+    else:
+        print("Data could not processed.")
+        return pd.DataFrame()
+    
+def save_to_excel(filename="deneme.xlsx"):
+    df = combine_all_data(excel_links)
+    if not df.empty:
+        df.to_excel(filename, index=False)
+        print(f"Excel file named {filename} is saved.")
+    else:
+        print("No data to save.")
 
-                df = pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
-                #print(f"Filename: {filename}")
-                df.iloc[:, 0] = df.iloc[:, 0].ffill()
-                df_city = df[df.iloc[:, 0] == "İstanbul"].copy()
-                df_city.fillna(0, inplace=True)
-
-                filename_normalized = normalize_text(filename)
-                match = re.search(r"\b(" + "|".join(month_mapping) + r")[\W_]*?(\d{4})\b", filename_normalized)
-
-                if match:
-                    raw_month, year_str = match.groups()
-                    normalized_month = month_mapping.get(raw_month)
-
-                    if normalized_month:
-                        month_index = months_tr.index(normalized_month)
-                        selected_months = months_tr[:month_index + 1]
-                        selected_columns = [0, 1] + list(range(3, 3 + len(selected_months)))
-                        df_city = df_city.iloc[:, selected_columns]
-                        df_city.columns = ["sehir", "sinir_kapilari"] + selected_months
-
-                        df_melted = df_city.melt(
-                            id_vars=["sehir", "sinir_kapilari"], var_name="ay", value_name="vatandas_sayisi"
-                        )
-
-                        def create_date(row):
-                            month_num = months_tr.index(row["ay"]) + 1
-                            return f"01-{month_num:02d}-{year_str}"
-
-                        df_melted["tarih"] = df_melted.apply(create_date, axis=1)
-                        df_melted = df_melted[["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"]]
-
-                        print(df_melted.head(20))
-                    else:
-                        print(f"Unrecognized month in filename: '{raw_month}'")
-                else:
-                    print("Could not extract month and year info from filename.")
-
-            except ValueError as ve:
-                print(f"Sheet 'Giren Vat.' not found in {filename}: {ve}")
-                continue
-            except Exception as e:
-                print(f"Error reading Excel file {href}: {e}")
-                continue
-
-prepare_all_month_df()
+#prepare_all_month_df()
+save_to_excel()
