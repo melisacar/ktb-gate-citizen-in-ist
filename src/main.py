@@ -199,6 +199,7 @@ def combine_all_data(excel_links):
 
     if all_data:
         combined_df = pd.concat(all_data, ignore_index=True)
+        combined_df.drop_duplicates(subset=["sehir", "sinir_kapilari", "tarih"])
         return combined_df
     else:
         print("Data could not processed.")
