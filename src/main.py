@@ -20,27 +20,30 @@ def fetch_page(url):
         print(f"Failed to retrieve the page. Status code: {r.status_code}")
         return None
 
-def get_year_urls(html):
+def get_year_urls(html, start_year=2022):
     soup = BeautifulSoup(html, "html.parser")
     year_urls = []
 
     for a in soup.find_all("a", href=True, title=True):
         if a["title"].isdigit():
-            full_url = urljoin(base_url, a["href"])
-            year_urls.append(full_url)
+            year = int(a["title"])
+            if year >= start_year:
+                full_url = urljoin(base_url, a["href"])
+                year_urls.append(full_url)
+
     return year_urls
 
-def extract_excel_links(html):
-    year_urls = get_year_urls(html)
+def extract_excel_links(html, start_year=2022):
+    year_urls = get_year_urls(html, start_year=start_year)
     sorted_year_urls = sorted(year_urls, key=lambda x: int(x.split("/")[-1].split(".")[0]), reverse=True)
     print(sorted_year_urls)
     excel_links = []
-    
+
     for year_url in sorted_year_urls:
         year_page_content = fetch_page(year_url)
         if not year_page_content:
             continue
-    
+
         soup = BeautifulSoup(year_page_content, "html.parser")
         for a in soup.find_all("a", href=True):
             href = a["href"]
@@ -48,6 +51,7 @@ def extract_excel_links(html):
                 full_url = urljoin(base_url, href)
                 print(f"Found excel is: {full_url}")
                 excel_links.append(full_url)
+
     print(f"\nTotally {len(excel_links)} have been found.\n")
     return excel_links
 
@@ -70,7 +74,7 @@ base_url = "https://yigm.ktb.gov.tr/"
 url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
 html_content = fetch_page(url)
 
-excel_links = extract_excel_links(html_content)
+excel_links = extract_excel_links(html_content, start_year=2022)
 #print(f"Excel links: {excel_links}")
 
 # Turkish month names
@@ -200,7 +204,7 @@ def combine_all_data(excel_links):
         print("Data could not processed.")
         return pd.DataFrame()
     
-def save_to_excel(filename="deneme.xlsx"):
+def save_to_excel(filename="deneme-3.xlsx"):
     df = combine_all_data(excel_links)
     if not df.empty:
         df.to_excel(filename, index=False)
