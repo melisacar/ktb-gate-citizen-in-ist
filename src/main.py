@@ -199,13 +199,13 @@ def combine_all_data(excel_links):
 
     if all_data:
         combined_df = pd.concat(all_data, ignore_index=True)
-        combined_df.drop_duplicates(subset=["sehir", "sinir_kapilari", "tarih"])
-        return combined_df
+        combined_df_drop_duplicate = combined_df.drop_duplicates(subset=["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"])
+        return combined_df_drop_duplicate
     else:
         print("Data could not processed.")
-        return pd.DataFrame()
+        return None
     
-def save_to_excel(filename="deneme-3.xlsx"):
+def save_to_excel(filename="deneme-6.xlsx"):
     df = combine_all_data(excel_links)
     if not df.empty:
         df.to_excel(filename, index=False)
