@@ -230,3 +230,24 @@ def save_to_excel(filename="deneme-6.xlsx"):
         print(f"Excel file named {filename} is saved.")
     else:
         print("No data to save.")
+
+def save_to_database(df, session):
+    for _, row in df.iterrows():
+        try:
+            vatandas_sayisi = float(str(row["vatandas_sayisi"]).replace(".","".replace(",","")))
+            new_record = ist_sinir_kapilari_giris_yapan_vatandas(
+                tarih = row["tarih"],
+                sehir = row["sehir"],
+                sinir_kapilari = row["sinir_kapilari"],
+                vatandas_sayisi = vatandas_sayisi,
+                erisim_tarihi = datetime.today().strftime("%Y-%m-%d")
+            )
+            session.add(new_record)
+            session.commit()
+        except ValueError:
+            print(f"Error converting vatandas_sayisi: {row['vatandas_sayisi']}. Skipping this row.")
+            session.rollback()
+        except IntegrityError:
+            print(f"Duplicate entry for date {row['tarih']}. Skipping...")
+            session.rollback()
+    print("Data added to the database.")
