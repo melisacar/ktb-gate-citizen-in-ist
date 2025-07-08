@@ -8,6 +8,11 @@ from urllib.parse import urlparse, unquote
 import re
 import unicodedata
 import urllib.parse
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import extract
+from models import ist_sinir_kapilari_giris_yapan_vatandas
+from datetime import datetime
+from sqlalchemy.exc import IntegrityError
 
 def fetch_page(url):
     headers = {
@@ -200,11 +205,24 @@ def combine_all_data(excel_links):
     if all_data:
         combined_df = pd.concat(all_data, ignore_index=True)
         combined_df_drop_duplicate = combined_df.drop_duplicates(subset=["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"])
-        return combined_df_drop_duplicate
+        #print(combined_df_drop_duplicate.head(10))
+        #print(combined_df_drop_duplicate.tail(10))
+        return combined_df_drop_duplicate     
     else:
         print("Data could not processed.")
         return None
-    
+
+def check_month_and_year_exists(session, month, year):
+    exists = (
+        session.query(ist_sinir_kapilari_giris_yapan_vatandas)
+        .filter(
+            extract('month', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == month,
+            extract('year', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == year
+        )
+        .first
+    )
+    return exists is not None ## Boolean
+
 def save_to_excel(filename="deneme-6.xlsx"):
     df = combine_all_data(excel_links)
     if not df.empty:
@@ -212,6 +230,3 @@ def save_to_excel(filename="deneme-6.xlsx"):
         print(f"Excel file named {filename} is saved.")
     else:
         print("No data to save.")
-
-#prepare_all_month_df()
-save_to_excel()
