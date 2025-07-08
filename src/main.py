@@ -13,6 +13,7 @@ from sqlalchemy import extract
 from models import ist_sinir_kapilari_giris_yapan_vatandas
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
+from models import engine
 
 def fetch_page(url):
     headers = {
@@ -33,7 +34,7 @@ def get_year_urls(html, start_year=2022):
         if a["title"].isdigit():
             year = int(a["title"])
             if year >= start_year:
-                full_url = urljoin(base_url, a["href"])
+                full_url = urljoin("https://yigm.ktb.gov.tr/", a["href"])
                 year_urls.append(full_url)
 
     return year_urls
@@ -53,7 +54,7 @@ def extract_excel_links(html, start_year=2022):
         for a in soup.find_all("a", href=True):
             href = a["href"]
             if ".xls" in href or ".xlsx" in href:
-                full_url = urljoin(base_url, href)
+                full_url = urljoin("https://yigm.ktb.gov.tr/", href)
                 print(f"Found excel is: {full_url}")
                 excel_links.append(full_url)
 
@@ -73,14 +74,6 @@ def normalize_text(text):
     text = text.lower()
     text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('utf-8')
     return text
-
-### Main execution
-base_url = "https://yigm.ktb.gov.tr/"
-url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
-html_content = fetch_page(url)
-
-excel_links = extract_excel_links(html_content, start_year=2022)
-#print(f"Excel links: {excel_links}")
 
 # Turkish month names
 months_tr = [
@@ -149,7 +142,7 @@ def reshape_city_data(df_city, month_index, year_str):
 
     def create_date(row):
         month_num = months_tr.index(row["ay"]) + 1
-        return f"01-{month_num:02d}-{year_str}"
+        return datetime(int(year_str), month_num, 1)
 
     df_melted["tarih"] = df_melted.apply(create_date, axis=1)
     return df_melted[["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"]]
@@ -187,12 +180,12 @@ def process_single_excel(href):
         print(f"Unrecognized month: {month_str}")
         return None
 
-def prepare_all_month_df():
-    for href in excel_links:
-        df_result = process_single_excel(href)
-        if df_result is not None:
-            print(df_result.head(5))
-            print(df_result.tail(5))
+#def prepare_all_month_df():
+#    for href in excel_links:
+#        df_result = process_single_excel(href)
+#        if df_result is not None:
+#            print(df_result.head(5))
+#            print(df_result.tail(5))
 
 def combine_all_data(excel_links):
     all_data = []
@@ -205,8 +198,6 @@ def combine_all_data(excel_links):
     if all_data:
         combined_df = pd.concat(all_data, ignore_index=True)
         combined_df_drop_duplicate = combined_df.drop_duplicates(subset=["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"])
-        #print(combined_df_drop_duplicate.head(10))
-        #print(combined_df_drop_duplicate.tail(10))
         return combined_df_drop_duplicate     
     else:
         print("Data could not processed.")
@@ -219,22 +210,25 @@ def check_month_and_year_exists(session, month, year):
             extract('month', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == month,
             extract('year', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == year
         )
-        .first
+        .first()
     )
     return exists is not None ## Boolean
 
-def save_to_excel(filename="deneme-6.xlsx"):
-    df = combine_all_data(excel_links)
-    if not df.empty:
-        df.to_excel(filename, index=False)
-        print(f"Excel file named {filename} is saved.")
-    else:
-        print("No data to save.")
+# def save_to_excel(filename="deneme-6.xlsx"):
+#     url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
+#     html_content = fetch_page(url)
+#     excel_links = extract_excel_links(html_content, start_year=2022)
+#     df = combine_all_data(excel_links)
+#     if not df.empty:
+#         df.to_excel(filename, index=False)
+#         print(f"Excel file named {filename} is saved.")
+#     else:
+#         print("No data to save.")
 
 def save_to_database(df, session):
     for _, row in df.iterrows():
         try:
-            vatandas_sayisi = float(str(row["vatandas_sayisi"]).replace(".","".replace(",","")))
+            vatandas_sayisi = float(str(row["vatandas_sayisi"]).replace(".","").replace(",",""))
             new_record = ist_sinir_kapilari_giris_yapan_vatandas(
                 tarih = row["tarih"],
                 sehir = row["sehir"],
@@ -251,3 +245,35 @@ def save_to_database(df, session):
             print(f"Duplicate entry for date {row['tarih']}. Skipping...")
             session.rollback()
     print("Data added to the database.")
+
+def main_02_03_ktb():
+    # Main execution
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    base_url = "https://yigm.ktb.gov.tr/"
+    url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
+    html_content = fetch_page(url)
+    if not html_content:
+        print("Could not fetch page content.")
+        return
+
+    excel_links = extract_excel_links(html_content, start_year=2022)
+
+    for href in excel_links:
+        df = process_single_excel(href)
+        if df is not None and not df.empty:
+            for _, row in df.iterrows():
+                tarih = row["tarih"]
+                year = tarih.year
+                month = tarih.month
+
+                if check_month_and_year_exists(session, month, year):
+                    print(f"{month}/{year} already exists. Skipping.")
+                else:
+                    print(f"Saving new data for {month}/{year}.")
+                    save_to_database(pd.DataFrame([row]), session)
+        else:
+            print(f"Data not extracted or empty {href}")
+    session.close()
+    print("ETL job is done!")
