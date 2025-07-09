@@ -180,13 +180,6 @@ def process_single_excel(href):
         print(f"Unrecognized month: {month_str}")
         return None
 
-#def prepare_all_month_df():
-#    for href in excel_links:
-#        df_result = process_single_excel(href)
-#        if df_result is not None:
-#            print(df_result.head(5))
-#            print(df_result.tail(5))
-
 def combine_all_data(excel_links):
     all_data = []
 
@@ -203,27 +196,17 @@ def combine_all_data(excel_links):
         print("Data could not processed.")
         return None
 
-def check_month_and_year_exists(session, month, year):
+def check_record_exists(session, month, year, sinir_kapilari):
     exists = (
         session.query(ist_sinir_kapilari_giris_yapan_vatandas)
         .filter(
             extract('month', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == month,
-            extract('year', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == year
+            extract('year', ist_sinir_kapilari_giris_yapan_vatandas.tarih) == year,
+            ist_sinir_kapilari_giris_yapan_vatandas.sinir_kapilari == sinir_kapilari
         )
         .first()
     )
     return exists is not None ## Boolean
-
-# def save_to_excel(filename="deneme-6.xlsx"):
-#     url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
-#     html_content = fetch_page(url)
-#     excel_links = extract_excel_links(html_content, start_year=2022)
-#     df = combine_all_data(excel_links)
-#     if not df.empty:
-#         df.to_excel(filename, index=False)
-#         print(f"Excel file named {filename} is saved.")
-#     else:
-#         print("No data to save.")
 
 def save_to_database(df, session):
     for _, row in df.iterrows():
@@ -267,13 +250,16 @@ def main_02_03_ktb():
                 tarih = row["tarih"]
                 year = tarih.year
                 month = tarih.month
+                sinir_kapilari = row["sinir_kapilari"]
 
-                if check_month_and_year_exists(session, month, year):
-                    print(f"{month}/{year} already exists. Skipping.")
+                if check_record_exists(session, month, year, sinir_kapilari):
+                    print(f"{month}/{year} - {sinir_kapilari} already exists. Skipping.")
                 else:
-                    print(f"Saving new data for {month}/{year}.")
+                    print(f"Saving new data for {month}/{year} - {sinir_kapilari}.")
                     save_to_database(pd.DataFrame([row]), session)
         else:
             print(f"Data not extracted or empty {href}")
     session.close()
     print("ETL job is done!")
+
+main_02_03_ktb()
