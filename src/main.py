@@ -14,16 +14,28 @@ from models import ist_sinir_kapilari_giris_yapan_vatandas
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
 from models import engine
+import logging
+
+# Setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 def fetch_page(url):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
     }
-    r = requests.get(url)
-    if r.status_code == 200:
+    try:
+        r = requests.get(url)
+        r.raise_for_status()
         return r.content
-    else:
-        print(f"Failed to retrieve the page. Status code: {r.status_code}")
+    except requests.RequestException as e:
+        logger.error(f"Failed to retrieve the page {url}: {e}")
         return None
 
 def get_year_urls(html, start_year=2022):
@@ -42,9 +54,9 @@ def get_year_urls(html, start_year=2022):
 def extract_excel_links(html, start_year=2022):
     year_urls = get_year_urls(html, start_year=start_year)
     sorted_year_urls = sorted(year_urls, key=lambda x: int(x.split("/")[-1].split(".")[0]), reverse=True)
-    print(sorted_year_urls)
-    excel_links = []
+    logger.info(f"Year URLs: {sorted_year_urls}")
 
+    excel_links = []
     for year_url in sorted_year_urls:
         year_page_content = fetch_page(year_url)
         if not year_page_content:
@@ -55,19 +67,20 @@ def extract_excel_links(html, start_year=2022):
             href = a["href"]
             if ".xls" in href or ".xlsx" in href:
                 full_url = urljoin("https://yigm.ktb.gov.tr/", href)
-                print(f"Found excel is: {full_url}")
+                logger.info(f"Found excel is: {full_url}")
                 excel_links.append(full_url)
 
-    print(f"\nTotally {len(excel_links)} have been found.\n")
+    logger.info(f"Total Excel files found: {len(excel_links)}")
     return excel_links
 
 def download_excel_file(href):
     encoded_href = urllib.parse.quote(href, safe=':/?&=')
-    response = requests.get(encoded_href, verify=False)
-    if response.status_code == 200:
+    try:
+        response = requests.get(encoded_href, verify=False)
+        response.raise_for_status()
         return response.content
-    else:
-        print(f"Failed to retrieve {href}, status code: {response.status_code}")
+    except requests.RequestException as e:
+        logger.error(f"Failed to download file {href}: {e}")
         return None
 
 def normalize_text(text):
@@ -111,7 +124,7 @@ def load_excel_file(excel_content, engine):
             xl = pd.ExcelFile(f, engine=engine)
         return pd.read_excel(BytesIO(excel_content), sheet_name="Giren Vat.", na_values=True, engine=engine)
     except Exception as e:
-        print(f"Error loading Excel content: {e}")
+        logger.error(f"Error loading Excel: {e}")
         return None
 
 def extract_month_year_from_filename(filename):
@@ -148,18 +161,18 @@ def reshape_city_data(df_city, month_index, year_str):
     return df_melted[["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"]]
 
 def process_single_excel(href):
-    print(f"\n--- Processing excel: {href}")
+    logger.info(f"Processing file: {href}")
     content = download_excel_file(href)
     if not content:
         return None
 
     path = urlparse(href).path
     filename = unquote(os.path.basename(path))
-    print(f"--- File name: {filename}")
+    logger.info(f"--- File name: {filename}")
     engine = get_excel_engine(filename)
 
     if not engine:
-        print(f"Unsupported file extension for {filename}")
+        logger.warning(f"Unsupported extension for {filename}")
         return None
 
     df = load_excel_file(content, engine)
@@ -170,14 +183,14 @@ def process_single_excel(href):
     month_str, year_str = extract_month_year_from_filename(filename)
 
     if not month_str or not year_str:
-        print(f"Could not extract month/year from: {filename}")
+        logger.warning(f"Month/year not extracted from filename: {filename}")
         return None
 
     try:
         month_index = months_tr.index(month_str)
         return reshape_city_data(df_city, month_index, year_str)
     except ValueError:
-        print(f"Unrecognized month: {month_str}")
+        logger.warning(f"Invalid month string: {month_str}")
         return None
 
 def combine_all_data(excel_links):
@@ -193,7 +206,7 @@ def combine_all_data(excel_links):
         combined_df_drop_duplicate = combined_df.drop_duplicates(subset=["sehir", "sinir_kapilari", "tarih", "vatandas_sayisi"])
         return combined_df_drop_duplicate     
     else:
-        print("Data could not processed.")
+        logger.warning("No valid data extracted.")
         return None
 
 def check_record_exists(session, month, year, sinir_kapilari):
@@ -222,12 +235,12 @@ def save_to_database(df, session):
             session.add(new_record)
             session.commit()
         except ValueError:
-            print(f"Error converting vatandas_sayisi: {row['vatandas_sayisi']}. Skipping this row.")
+            logger.error(f"ValueError on row: {row}")
             session.rollback()
         except IntegrityError:
-            print(f"Duplicate entry for date {row['tarih']}. Skipping...")
+            logger.warning(f"Duplicate entry for date {row['tarih']}. Skipping...")
             session.rollback()
-    print("Data added to the database.")
+    logger.info("Data committed to database.")
 
 def main_02_03_ktb():
     # Main execution
@@ -238,7 +251,7 @@ def main_02_03_ktb():
     url = "https://yigm.ktb.gov.tr/TR-249704/aylik-bultenler.html"
     html_content = fetch_page(url)
     if not html_content:
-        print("Could not fetch page content.")
+        logger.error("Main page content couldn't be fetched.")
         return
 
     excel_links = extract_excel_links(html_content, start_year=2022)
@@ -253,13 +266,13 @@ def main_02_03_ktb():
                 sinir_kapilari = row["sinir_kapilari"]
 
                 if check_record_exists(session, month, year, sinir_kapilari):
-                    print(f"{month}/{year} - {sinir_kapilari} already exists. Skipping.")
+                    logger.info(f"Already exists: {tarih.month}/{tarih.year} - {row['sinir_kapilari']}")
                 else:
-                    print(f"Saving new data for {month}/{year} - {sinir_kapilari}.")
+                    logger.info(f"Inserting {tarih.month}/{tarih.year} - {row['sinir_kapilari']}")
                     save_to_database(pd.DataFrame([row]), session)
         else:
-            print(f"Data not extracted or empty {href}")
+            logger.warning(f"No data extracted from: {href}")
     session.close()
-    print("ETL job is done!")
+    logger.info("ETL process completed successfully.")
 
 main_02_03_ktb()
