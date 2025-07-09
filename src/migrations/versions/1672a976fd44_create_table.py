@@ -20,19 +20,19 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade() -> None:
     op.create_table(
-        'ist-sinir-kapilari-giris-yapan-vatandas',
+        'ist_sinir_kapilari_giris_yapan_vatandas',
         sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('tarih', sa.Date, nullable=False),
         sa.Column('sehir', sa.String, nullable=False),
         sa.Column('sinir_kapilari', sa.String, nullable=False),
         sa.Column('vatandas_sayisi', sa.Integer, nullable=False),
         sa.Column('erisim_tarihi', sa.Date, nullable=False),
-        sa.UniqueConstraint('tarih', 'sehir', 'sinir_kapilari', 'vatandas_sayisi', name='unique_ist_sinir_kapilari_giris_yapan_vatandas'),
+        sa.UniqueConstraint('tarih', 'sehir', 'sinir_kapilari', 'vatandas_sayisi', name='unq_ist_sinir_kapilari_giris_yapan_vatandas'),
         schema='etl'
     )
 
 
 def downgrade() -> None:
     op.execute("""
-    DROP TABLE OF EXISTS etl.ist-sinir-kapilari-giris-yapan-vatandas;
+    DROP TABLE IF EXISTS etl.ist_sinir_kapilari_giris_yapan_vatandas
     """)
