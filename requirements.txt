@@ -1,5 +1,4 @@
 requests
-unicodedata
 bs4
 urllib.parse
 pandas
