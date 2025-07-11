@@ -1,8 +1,4 @@
 requests
-bs4
-urllib.parse
+beautifulsoup4
 pandas
-io
-os
-re
 alembic
