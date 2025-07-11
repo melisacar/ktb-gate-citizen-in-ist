@@ -24,7 +24,6 @@ x-airflow-common:
     postgres:
       condition: service_healthy
 
-
 services:
   app:
     build:
@@ -35,17 +34,87 @@ services:
     depends_on:
       - database
 
-    database:
-      image: "postgres"
-      container_name: "database-ktb-in"
-      ports:
-       - "5432:5432"
-      environment:
-      - "POSTGRES_PASSWORD=secret"
-      - "POSTGRES_DB=ktb-in-scrape"
-      # defaults the user to "postgres"
+  database:
+    image: "postgres"
+    container_name: "database-ktb-in"
+    ports:
+      - "5432:5432"
+    environment:
+    - "POSTGRES_PASSWORD=secret"
+    - "POSTGRES_DB=ktb-in-scrape"
+    # defaults the user to "postgres"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 30s
+      retries: 50
+    restart: always
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    restart: always
+
+  airflow-worker:
+    <<: *airflow-common
+    command: celery worker
+    restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+
+  flower:
+    <<: *airflow-common
+    command: celery flower
+    ports:
+      - 5555:5555
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
 volumes:
+  postgres-db-volume:
   pg-data:
-
-    
-
