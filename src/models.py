@@ -20,6 +20,6 @@ class ist_sinir_kapilari_giris_yapan_vatandas(Base):
     vatandas_sayisi = Column(Float, nullable=True)
     erisim_tarihi = Column(Date, nullable=False)
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, echo=True)
 
 Session = sessionmaker(bind=engine)
