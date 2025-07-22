@@ -10,16 +10,14 @@ Base = declarative_base()
 class ist_sinir_kapilari_giris_yapan_vatandas(Base):
     __tablename__ = 'ist_sinir_kapilari_giris_yapan_vatandas'
     __table_args__ = (UniqueConstraint('tarih', 'sehir', 'sinir_kapilari', name = 'unique_ist_sinir_kapilari_giris_yapan_vatandas'),
-        {'schema': 'etl'}
-    )
-
+                    {'schema': 'etl'})
     id = Column(Integer, primary_key=True, autoincrement=True)
     tarih = Column(Date, nullable=False)
     sehir = Column(String, nullable=False)
     sinir_kapilari = Column(String, nullable=False)
-    vatandas_sayisi = Column(Float, nullable=True)
+    vatandas_sayisi = Column(Float, nullable=False)
     erisim_tarihi = Column(Date, nullable=False)
 
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DATABASE_URL)
 
 Session = sessionmaker(bind=engine)
