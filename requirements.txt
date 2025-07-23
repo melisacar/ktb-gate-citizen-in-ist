@@ -2,3 +2,5 @@ requests
 beautifulsoup4
 pandas
 alembic
+xlrd>=2.0.1
+openpyxl
