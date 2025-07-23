@@ -16,15 +16,9 @@ from sqlalchemy.exc import IntegrityError
 from models import engine
 import logging
 
-# Setup logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler()
-    ]
-)
+# Logging
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 def fetch_page(url):
     headers = {
@@ -222,25 +216,35 @@ def check_record_exists(session, month, year, sinir_kapilari):
     return exists is not None ## Boolean
 
 def save_to_database(df, session):
-    for _, row in df.iterrows():
-        try:
-            vatandas_sayisi = float(str(row["vatandas_sayisi"]).replace(".","").replace(",",""))
-            new_record = ist_sinir_kapilari_giris_yapan_vatandas(
-                tarih = row["tarih"],
-                sehir = row["sehir"],
-                sinir_kapilari = row["sinir_kapilari"],
-                vatandas_sayisi = vatandas_sayisi,
-                erisim_tarihi = datetime.today().strftime("%Y-%m-%d")
-            )
-            session.add(new_record)
-            session.commit()
-        except ValueError:
-            logger.error(f"ValueError on row: {row}")
-            session.rollback()
-        except IntegrityError:
-            logger.warning(f"Duplicate entry for date {row['tarih']}. Skipping...")
-            session.rollback()
-    logger.info("Data committed to database.")
+    try:
+        success_count = 0
+        for _, row in df.iterrows():
+            try:
+                vatandas_sayisi = float(str(row["vatandas_sayisi"]).replace(".","").replace(",",""))
+                new_record = ist_sinir_kapilari_giris_yapan_vatandas(
+                    tarih=row["tarih"],
+                    sehir=row["sehir"],
+                    sinir_kapilari=str(row["sinir_kapilari"]),
+                    vatandas_sayisi=vatandas_sayisi,
+                    erisim_tarihi=datetime.today().date()
+                )
+                session.add(new_record)
+                success_count += 1
+                
+            except ValueError as e:
+                logger.error(f"ValueError on row {row.name}: {str(e)} | Row data: {row.to_dict()}")
+                continue
+            except IntegrityError:
+                logger.warning(f"Duplicate entry: {row['tarih']} - {row['sinir_kapilari']}")
+                continue
+        
+        session.commit()
+        logger.info(f"Successfully inserted {success_count}/{len(df)} records")
+        
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Database transaction failed: {str(e)}")
+        raise
 
 def main_02_03_ktb():
     # Main execution
@@ -275,4 +279,5 @@ def main_02_03_ktb():
     session.close()
     logger.info("ETL process completed successfully.")
 
-main_02_03_ktb()
+def run_main_02_03_ktb():
+    main_02_03_ktb()
