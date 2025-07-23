@@ -75,41 +75,41 @@ ktb-gate-citizen-in-ist/
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/melisacar/ktb-gate-citizen-in-ist.git
-```
+    ```bash
+    git clone https://github.com/melisacar/ktb-gate-citizen-in-ist.git
+    ```
 
-```bash
-cd ktb-gate-citizen-in-ist
-```
+    ```bash
+    cd ktb-gate-citizen-in-ist
+    ```
 
-1. Build and start the services using Docker Compose (Airflow & PostgreSQL):
+2. Build and start the services using Docker Compose (Airflow & PostgreSQL):
 
-```bash
-docker-compose up airflow-init
-docker-compose up -d --build
-```
+    ```bash
+    docker-compose up airflow-init
+    docker-compose up -d --build
+    ```
 
-1. Install dependencies locally (optional if not using Docker):
+3. Install dependencies locally (optional if not using Docker):
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-1. Configure your database connection in src/config.py or environment variables as needed.
+4. Configure your database connection in src/config.py or environment variables as needed.
 
-1. Run Alembic migrations to create the database schema:
+5. Run Alembic migrations to create the database schema:
 
-```bash
-alembic upgrade head
-```
+    ```bash
+    alembic upgrade head
+    ```
 
-1. Access the Airflow UI at: [http://localhost:8080](http://localhost:8080)
+6. Access the Airflow UI at: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
     - Username: `airflow`
     - Password: `airflow`
 
-1. The DAG defined in the `dags/` folder will appear in the Airflow UI. You can trigger it manually or set a schedule.
+7. The DAG defined in the `dags/` folder will appear in the Airflow UI. You can trigger it manually or set a schedule.
 
 ---
 
@@ -128,15 +128,6 @@ alembic upgrade head
 | `erisim_tarihi`    | date    | Date when the record was inserted        |
 
 > Unique constraint on (`tarih`, `sehir`, `sinir_kapilari`)
-
----
-
-## Running the Pipeline
-
-> Access Airflow at ``http://127.0.0.1:8080``
-> Credentials: `airflow / airflow`
-> Enable `02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas` DAG
-> Monitor execution via Airflow UI
 
 ---
 
