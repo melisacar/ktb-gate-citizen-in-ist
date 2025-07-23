@@ -1,0 +1,413 @@
+[2025-07-16T07:10:05.794+0000] {processor.py:186} INFO - Started process (PID=33) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:10:05.795+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:10:05.799+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:10:05.799+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:10:06.286+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:10:06.766+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:10:06.765+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:10:06.997+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:10:06.996+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:10:07.196+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 1.410 seconds
+[2025-07-16T07:10:38.205+0000] {processor.py:186} INFO - Started process (PID=90) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:10:38.207+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:10:38.209+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:10:38.209+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:10:38.460+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:10:38.542+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:10:38.540+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:10:38.622+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:10:38.622+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:10:38.657+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.460 seconds
+[2025-07-16T07:11:09.560+0000] {processor.py:186} INFO - Started process (PID=147) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:11:09.561+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:11:09.564+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:11:09.563+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:11:09.764+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:11:09.823+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:11:09.823+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:11:09.893+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:11:09.893+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:11:09.939+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.386 seconds
+[2025-07-16T07:11:40.026+0000] {processor.py:186} INFO - Started process (PID=204) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:11:40.028+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:11:40.034+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:11:40.033+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:11:40.216+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:11:40.243+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:11:40.243+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:11:40.279+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:11:40.279+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:11:40.310+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.296 seconds
+[2025-07-16T07:12:10.648+0000] {processor.py:186} INFO - Started process (PID=261) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:12:10.649+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:12:10.652+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:12:10.652+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:12:10.816+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:12:10.842+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:12:10.840+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:12:10.869+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:12:10.869+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:12:10.892+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.253 seconds
+[2025-07-16T07:12:41.001+0000] {processor.py:186} INFO - Started process (PID=318) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:12:41.003+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:12:41.007+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:12:41.007+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:12:41.272+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:12:41.298+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:12:41.297+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:12:41.326+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:12:41.326+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:12:41.359+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.372 seconds
+[2025-07-16T07:13:11.516+0000] {processor.py:186} INFO - Started process (PID=375) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:13:11.517+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:13:11.521+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:13:11.521+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:13:11.693+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:13:11.718+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:13:11.717+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:13:11.744+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:13:11.744+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:13:11.770+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.264 seconds
+[2025-07-16T07:13:42.270+0000] {processor.py:186} INFO - Started process (PID=432) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:13:42.272+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:13:42.274+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:13:42.274+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:13:42.419+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:13:42.442+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:13:42.442+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:13:42.475+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:13:42.474+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:13:42.503+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.240 seconds
+[2025-07-16T07:14:13.554+0000] {processor.py:186} INFO - Started process (PID=489) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:14:13.555+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:14:13.558+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:14:13.558+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:14:13.699+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:14:13.718+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:14:13.717+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:14:13.742+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:14:13.741+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:14:13.764+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.217 seconds
+[2025-07-16T07:14:43.889+0000] {processor.py:186} INFO - Started process (PID=546) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:14:43.890+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:14:43.893+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:14:43.893+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:14:44.043+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:14:44.064+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:14:44.063+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:14:44.087+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:14:44.087+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:14:44.115+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.234 seconds
+[2025-07-16T07:15:14.503+0000] {processor.py:186} INFO - Started process (PID=603) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:15:14.504+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:15:14.508+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:15:14.508+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:15:14.682+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:15:14.706+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:15:14.705+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:15:14.731+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:15:14.731+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:15:14.770+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.276 seconds
+[2025-07-16T07:15:45.208+0000] {processor.py:186} INFO - Started process (PID=660) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:15:45.211+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:15:45.217+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:15:45.216+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:15:45.458+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:15:45.481+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:15:45.481+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:15:45.513+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:15:45.512+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:15:45.534+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.339 seconds
+[2025-07-16T07:16:15.874+0000] {processor.py:186} INFO - Started process (PID=717) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:16:15.876+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:16:15.878+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:16:15.878+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:16:16.051+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:16:16.071+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:16:16.071+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:16:16.100+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:16:16.100+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:16:16.128+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.263 seconds
+[2025-07-16T07:16:46.389+0000] {processor.py:186} INFO - Started process (PID=774) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:16:46.391+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:16:46.394+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:16:46.394+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:16:46.552+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:16:46.574+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:16:46.572+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:16:46.598+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:16:46.598+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:16:46.621+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.241 seconds
+[2025-07-16T07:17:17.095+0000] {processor.py:186} INFO - Started process (PID=831) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:17:17.096+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:17:17.099+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:17:17.099+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:17:17.299+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:17:17.322+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:17:17.321+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:17:17.348+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:17:17.348+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:17:17.372+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.286 seconds
+[2025-07-16T07:17:47.710+0000] {processor.py:186} INFO - Started process (PID=888) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:17:47.711+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:17:47.715+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:17:47.714+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:17:47.882+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:17:47.911+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:17:47.910+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:17:47.947+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:17:47.947+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:17:47.975+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.276 seconds
+[2025-07-16T07:18:18.466+0000] {processor.py:186} INFO - Started process (PID=945) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:18:18.468+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:18:18.471+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:18:18.471+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:18:18.626+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:18:18.651+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:18:18.650+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:18:18.685+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:18:18.685+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:18:18.707+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.248 seconds
+[2025-07-16T07:18:49.227+0000] {processor.py:186} INFO - Started process (PID=1002) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:18:49.228+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:18:49.231+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:18:49.230+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:18:49.399+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:18:49.421+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:18:49.420+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:18:49.448+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:18:49.448+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:18:49.476+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.257 seconds
+[2025-07-16T07:19:19.743+0000] {processor.py:186} INFO - Started process (PID=1059) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:19:19.745+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:19:19.748+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:19:19.747+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:19:19.926+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:19:19.947+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:19:19.947+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:19:19.974+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:19:19.974+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:19:19.998+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.264 seconds
+[2025-07-16T07:19:50.286+0000] {processor.py:186} INFO - Started process (PID=1116) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:19:50.287+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:19:50.290+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:19:50.290+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:19:50.430+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:19:50.450+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:19:50.450+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:19:50.474+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:19:50.474+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:19:50.500+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.222 seconds
+[2025-07-16T07:20:20.731+0000] {processor.py:186} INFO - Started process (PID=1173) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:20:20.732+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:20:20.735+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:20:20.734+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:20:20.909+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:20:20.928+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:20:20.928+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:20:20.951+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:20:20.950+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:20:20.971+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.247 seconds
+[2025-07-16T07:20:51.261+0000] {processor.py:186} INFO - Started process (PID=1230) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:20:51.262+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:20:51.266+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:20:51.266+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:20:51.427+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:20:51.450+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:20:51.449+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:20:51.474+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:20:51.474+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:20:51.499+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.247 seconds
+[2025-07-16T07:21:22.143+0000] {processor.py:186} INFO - Started process (PID=1287) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:21:22.144+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:21:22.148+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:21:22.147+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:21:22.293+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:21:22.314+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:21:22.313+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:21:22.339+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:21:22.339+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:21:22.363+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.227 seconds
+[2025-07-16T07:21:52.922+0000] {processor.py:186} INFO - Started process (PID=1344) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:21:52.923+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:21:52.926+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:21:52.926+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:21:53.083+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:21:53.104+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:21:53.104+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:21:53.128+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:21:53.128+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:21:53.150+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.235 seconds
+[2025-07-16T07:22:23.614+0000] {processor.py:186} INFO - Started process (PID=1401) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:22:23.616+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:22:23.619+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:22:23.618+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:22:23.793+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:22:23.812+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:22:23.812+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:22:23.838+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:22:23.838+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:22:23.860+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.256 seconds
+[2025-07-16T07:22:54.571+0000] {processor.py:186} INFO - Started process (PID=1458) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:22:54.572+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:22:54.575+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:22:54.575+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:22:54.790+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:22:54.808+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:22:54.807+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:22:54.831+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:22:54.831+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:22:54.852+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.289 seconds
+[2025-07-16T07:23:25.632+0000] {processor.py:186} INFO - Started process (PID=1515) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:23:25.634+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:23:25.638+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:23:25.637+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:23:25.814+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:23:25.840+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:23:25.839+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:23:25.877+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:23:25.877+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:23:25.910+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.292 seconds
+[2025-07-16T07:23:56.826+0000] {processor.py:186} INFO - Started process (PID=1572) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:23:56.827+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:23:56.831+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:23:56.830+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:23:57.007+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:23:57.029+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:23:57.029+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:23:57.056+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:23:57.055+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:23:57.083+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.265 seconds
+[2025-07-16T07:24:27.207+0000] {processor.py:186} INFO - Started process (PID=1629) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:24:27.208+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:24:27.213+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:24:27.213+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:24:27.352+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:24:27.371+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:24:27.371+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:24:27.394+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:24:27.394+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:24:27.417+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.216 seconds
+[2025-07-16T07:24:58.292+0000] {processor.py:186} INFO - Started process (PID=1686) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:24:58.294+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:24:58.297+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:24:58.297+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:24:58.489+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:24:58.508+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:24:58.507+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:24:58.534+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:24:58.534+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:24:58.558+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.275 seconds
+[2025-07-16T07:25:29.251+0000] {processor.py:186} INFO - Started process (PID=1743) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:25:29.253+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:25:29.257+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:25:29.257+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:25:29.424+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:25:29.444+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:25:29.443+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:25:29.467+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:25:29.467+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:25:29.490+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.248 seconds
+[2025-07-16T07:25:59.541+0000] {processor.py:186} INFO - Started process (PID=1800) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:25:59.543+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:25:59.546+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:25:59.545+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:25:59.765+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:25:59.787+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:25:59.786+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:25:59.822+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:25:59.822+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:25:59.853+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.318 seconds
+[2025-07-16T07:26:30.350+0000] {processor.py:186} INFO - Started process (PID=1857) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:26:30.351+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:26:30.354+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:26:30.354+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:26:30.536+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:26:30.557+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:26:30.557+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:26:30.592+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:26:30.591+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:26:30.617+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.277 seconds
+[2025-07-16T07:27:01.305+0000] {processor.py:186} INFO - Started process (PID=1914) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:27:01.306+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:27:01.310+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:27:01.310+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:27:01.489+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:27:01.511+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:27:01.511+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:27:01.544+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:27:01.543+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:27:01.570+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.273 seconds
+[2025-07-16T07:27:32.354+0000] {processor.py:186} INFO - Started process (PID=1971) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:27:32.355+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:27:32.358+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:27:32.358+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:27:32.512+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:27:32.531+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:27:32.530+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:27:32.748+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:27:32.748+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:27:32.770+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.423 seconds
+[2025-07-16T07:28:03.782+0000] {processor.py:186} INFO - Started process (PID=2028) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:28:03.786+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:28:03.791+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:28:03.790+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:28:03.955+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:28:03.976+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:28:03.976+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:28:04.176+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:28:04.176+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:28:04.199+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.430 seconds
+[2025-07-16T07:28:35.039+0000] {processor.py:186} INFO - Started process (PID=2085) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:28:35.040+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:28:35.043+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:28:35.043+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:28:35.217+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:28:35.241+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:28:35.240+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:28:35.276+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:28:35.275+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:28:35.473+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.443 seconds
+[2025-07-16T07:29:05.681+0000] {processor.py:186} INFO - Started process (PID=2142) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:29:05.683+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:29:05.688+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:29:05.687+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:29:05.956+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:29:05.982+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:29:05.982+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:29:06.015+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:29:06.015+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:29:06.476+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.808 seconds
+[2025-07-16T07:29:36.646+0000] {processor.py:186} INFO - Started process (PID=2199) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:29:36.647+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:29:36.650+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:29:36.650+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:29:36.851+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:29:36.872+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:29:36.871+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:29:36.899+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:29:36.899+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:29:36.922+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.284 seconds
+[2025-07-16T07:30:07.079+0000] {processor.py:186} INFO - Started process (PID=2256) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:30:07.081+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:30:07.083+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:30:07.083+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:30:07.247+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:30:07.266+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:30:07.266+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:30:07.296+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:30:07.296+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:30:07.324+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.251 seconds
+[2025-07-16T07:30:38.343+0000] {processor.py:186} INFO - Started process (PID=2313) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:30:38.344+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:30:38.347+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:30:38.347+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:30:38.861+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:30:38.879+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:30:38.878+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:30:38.903+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:30:38.902+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:30:38.927+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.593 seconds
+[2025-07-16T07:31:09.290+0000] {processor.py:186} INFO - Started process (PID=2370) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:31:09.291+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:31:09.295+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:31:09.294+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:31:09.662+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:31:09.680+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:31:09.680+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:31:09.705+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:31:09.705+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:31:09.726+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.446 seconds
+[2025-07-16T07:31:40.679+0000] {processor.py:186} INFO - Started process (PID=2427) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:31:40.680+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:31:40.683+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:31:40.683+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:31:41.003+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:31:41.019+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:31:41.018+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:31:41.040+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:31:41.040+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:31:41.063+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.392 seconds
+[2025-07-16T07:32:59.081+0000] {processor.py:186} INFO - Started process (PID=34) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:32:59.087+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:32:59.093+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:32:59.092+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:32:59.474+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:32:59.538+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:32:59.537+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:32:59.584+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:32:59.584+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:32:59.624+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.565 seconds
+[2025-07-16T07:33:29.715+0000] {processor.py:186} INFO - Started process (PID=91) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:33:29.716+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:33:29.719+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:33:29.718+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:33:29.892+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:33:29.920+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:33:29.918+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:33:29.950+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:33:29.949+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:33:29.972+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.265 seconds
+[2025-07-16T07:34:00.094+0000] {processor.py:186} INFO - Started process (PID=148) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:34:00.095+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:34:00.099+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:34:00.098+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:34:00.263+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:34:00.281+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:34:00.281+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:34:00.305+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:34:00.305+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:34:00.330+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.242 seconds
+[2025-07-16T07:34:30.982+0000] {processor.py:186} INFO - Started process (PID=205) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:34:30.984+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:34:30.989+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:34:30.988+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:34:31.149+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:34:31.169+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:34:31.169+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:34:31.191+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:34:31.191+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:34:31.219+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.246 seconds
+[2025-07-16T07:35:01.906+0000] {processor.py:186} INFO - Started process (PID=262) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:35:01.908+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:35:01.911+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:35:01.910+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:35:02.072+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:35:02.092+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:35:02.091+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:35:02.117+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:35:02.117+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:35:02.146+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.247 seconds
+[2025-07-16T07:35:32.307+0000] {processor.py:186} INFO - Started process (PID=319) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:35:32.308+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:35:32.312+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:35:32.311+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:35:32.491+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:35:32.511+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:35:32.511+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:35:32.538+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:35:32.538+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:35:32.562+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.264 seconds
+[2025-07-16T07:36:02.675+0000] {processor.py:186} INFO - Started process (PID=376) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:36:02.677+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:36:02.680+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:36:02.679+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:36:02.861+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:36:02.880+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:36:02.879+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:36:02.908+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:36:02.907+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:36:02.929+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.261 seconds
+[2025-07-16T07:36:33.353+0000] {processor.py:186} INFO - Started process (PID=433) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:36:33.355+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:36:33.359+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:36:33.358+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:36:33.566+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:36:33.588+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:36:33.587+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:36:33.620+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:36:33.620+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:36:33.646+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.304 seconds
+[2025-07-16T07:37:03.927+0000] {processor.py:186} INFO - Started process (PID=490) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:37:03.929+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:37:03.933+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:37:03.932+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:37:04.090+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:37:04.110+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:37:04.109+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:37:04.133+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:37:04.133+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:37:04.155+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.237 seconds
+[2025-07-16T07:37:34.483+0000] {processor.py:186} INFO - Started process (PID=547) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:37:34.484+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:37:34.488+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:37:34.487+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:37:34.651+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:37:34.672+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:37:34.672+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:37:34.696+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:37:34.696+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:37:34.721+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.247 seconds
+[2025-07-16T07:38:04.819+0000] {processor.py:186} INFO - Started process (PID=605) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:38:04.820+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:38:04.826+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:38:04.826+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:38:05.012+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:38:05.033+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:38:05.032+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:38:05.059+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:38:05.059+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:38:05.082+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.273 seconds
+[2025-07-16T07:38:35.884+0000] {processor.py:186} INFO - Started process (PID=661) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:38:35.885+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:38:35.887+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:38:35.887+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:38:36.039+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:38:36.058+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:38:36.058+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:38:36.080+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:38:36.080+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:38:36.102+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.225 seconds
+[2025-07-16T07:39:06.345+0000] {processor.py:186} INFO - Started process (PID=718) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:39:06.346+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:39:06.351+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:39:06.350+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:39:06.525+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:39:06.548+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:39:06.548+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:39:06.571+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:39:06.571+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:39:06.595+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.260 seconds
+[2025-07-16T07:39:37.018+0000] {processor.py:186} INFO - Started process (PID=775) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:39:37.019+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:39:37.022+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:39:37.021+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:39:37.167+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:39:37.187+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:39:37.186+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:39:37.209+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:39:37.209+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:39:37.230+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.220 seconds
+[2025-07-16T07:40:07.435+0000] {processor.py:186} INFO - Started process (PID=832) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:40:07.437+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:40:07.442+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:40:07.441+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:40:07.619+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:40:07.637+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:40:07.636+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:40:07.660+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:40:07.660+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:40:07.680+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.256 seconds
+[2025-07-16T07:40:38.171+0000] {processor.py:186} INFO - Started process (PID=889) to work on /opt/airflow/dags/02_03.py
+[2025-07-16T07:40:38.172+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/02_03.py for tasks to queue
+[2025-07-16T07:40:38.175+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:40:38.175+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/02_03.py
+[2025-07-16T07:40:38.352+0000] {processor.py:925} INFO - DAG(s) '02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas' retrieved from /opt/airflow/dags/02_03.py
+[2025-07-16T07:40:38.372+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:40:38.372+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-07-16T07:40:38.395+0000] {logging_mixin.py:190} INFO - [2025-07-16T07:40:38.395+0000] {dag.py:4156} INFO - Setting next_dagrun for 02_03_ktb_pipe_etl_ist_sinir_kapilari_giris_yapan_vatandas to 2025-11-07 03:00:00+00:00, run_after=2025-11-08 03:00:00+00:00
+[2025-07-16T07:40:38.421+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/02_03.py took 0.259 seconds
