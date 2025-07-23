@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 x-airflow-common:
   &airflow-common
   build: .
@@ -10,8 +10,10 @@ x-airflow-common:
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+    DATABASE_URL: postgresql://postgres:secret@database-ktb-in:5432/ktb-in-scrape
+    AIRFLOW__CORE__LOGGING_LEVEL: INFO
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
